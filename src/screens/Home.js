@@ -9,19 +9,8 @@ import { styles } from '../../Styles'
 
 class Home extends React.Component {
   static navigationOptions = ({ navigation }) => {
-    return {
-      //title: 'Home',
-      headerLeft: (
-        <View style={{
-          paddingLeft: 5
-        }}>
-          <Button
-            onPress={() => navigation.navigate('MyModal')}
-            title='Modal'
-            color='#666'
-          />
-        </View>
-      )
+    return {   
+      header: null
     }
   }
   render() {

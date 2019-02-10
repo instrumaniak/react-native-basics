@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 20
+    fontSize: 30
   },
   buttonGroup: {
     flexDirection: 'row',

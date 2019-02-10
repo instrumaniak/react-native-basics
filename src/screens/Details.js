@@ -29,18 +29,21 @@ const Details = props => {
   )
 }
 
-Details.navigationOptions = {
-  title: 'Details',
-  headerRight: (
-    <Button
-      onPress={() => Alert.alert('This is a button!') }
-      title='Info'
-      color='#666'
-      style={{
-        marginRight: 5
-      }}
-    />
-  )
+Details.navigationOptions = ({ navigation }) => {
+  return {
+    title: 'Details',
+    headerRight: (
+      <View style={{
+        paddingRight: 5
+      }}>
+        <Button
+          onPress={() => navigation.navigate('MyModal')}
+          title='Modal'
+          color='#666'
+        />
+      </View>
+    )
+  }
 }
 
 
