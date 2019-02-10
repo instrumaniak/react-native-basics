@@ -3,9 +3,9 @@ import { View, Text } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from './src/screens/Home'
 import Details from './src/screens/Details'
+import MyModal from './src/screens/MyModal'
 
-
-const AppNavigator = createStackNavigator({
+const MainStack = createStackNavigator({
   Home,
   Details
 },
@@ -23,7 +23,15 @@ const AppNavigator = createStackNavigator({
   }
 })
 
-const AppContainer = createAppContainer(AppNavigator)
+const RootStack = createStackNavigator({
+  Main: MainStack,
+  MyModal
+},{
+  mode: 'modal',
+  headerMode: 'none'
+})
+
+const AppContainer = createAppContainer(RootStack)
 
 class App extends Component {
   render() {

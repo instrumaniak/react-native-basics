@@ -8,8 +8,21 @@ import ScrolledDownView from '../components/ScrolledDownView'
 import { styles } from '../../Styles'
 
 class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Home'
+  static navigationOptions = ({ navigation }) => {
+    return {
+      //title: 'Home',
+      headerLeft: (
+        <View style={{
+          paddingLeft: 5
+        }}>
+          <Button
+            onPress={() => navigation.navigate('MyModal')}
+            title='Modal'
+            color='#666'
+          />
+        </View>
+      )
+    }
   }
   render() {
     const { navigation: { navigate }} = this.props
