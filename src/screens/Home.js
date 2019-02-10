@@ -1,34 +1,36 @@
 import React, { Component, Fragment } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button, StyleSheet } from 'react-native'
 
 import TextInputBasics from '../components/TextInputBasics'
 import ButtonBasics from '../components/ButtonBasics'
 import ScrolledDownView from '../components/ScrolledDownView'
 
+import { styles } from '../../Styles'
 
-
-class Home extends Component {
+class Home extends React.Component {
+  static navigationOptions = {
+    title: 'Home'
+  }
   render() {
-
+    const { navigation: { navigate }} = this.props
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex: 1}}>
-          <TextInputBasics />
+      <View style={styles.containerSpaced}>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>React Native Lab</Text>
+          <Text style={{ width: 250, marginTop: 20, fontStyle: 'italic', textAlign: 'center' }}>
+          In this Lab we experiment with basics of
+          React Native, Creating Components & Styling them,
+          Creating App Screens & Navigating to/from one another!
+          </Text>
         </View>
-
-        <View style={{flex: 0.5}}>
-          <ButtonBasics />
-        </View>
-
-        {/*<Touchables />*/}
-        
-        <View style={{flex: 1}}>
-          <Text>Scrollable View:</Text>
-          <ScrolledDownView />
-        </View>
+        <Button
+          title='Details'
+          onPress={() => navigate('Details')}
+        />
       </View>
-    )
+    );
   }
 }
+
 
 export default Home

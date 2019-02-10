@@ -1,22 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import Home from './src/screens/Home'
+import Details from './src/screens/Details'
 
-class HomeScreen extends React.Component {
+
+const AppNavigator = createStackNavigator({
+  Home,
+  Details
+},
+{
+  initialRouteName: 'Home',
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: 'steelblue',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'normal'
+    }
+
+  }
+})
+
+const AppContainer = createAppContainer(AppNavigator)
+
+class App extends Component {
   render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ fontWeight: 'bold'}}>React Native Lab</Text>
-        <Text>Home Screen</Text>
-      </View>
-    );
+    return <AppContainer />
   }
 }
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen
-  }
-});
-
-export default createAppContainer(AppNavigator);
+export default App
