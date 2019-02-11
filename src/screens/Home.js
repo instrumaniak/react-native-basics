@@ -5,6 +5,8 @@ import TextInputBasics from '../components/TextInputBasics'
 import ButtonBasics from '../components/ButtonBasics'
 import ScrolledDownView from '../components/ScrolledDownView'
 
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import { styles } from '../../Styles'
 
 class Home extends React.Component {
@@ -24,6 +26,9 @@ class Home extends React.Component {
           React Native, Creating Components & Styling them,
           Creating App Screens & Navigating to/from one another!
           </Text>
+        </View>
+        <View>
+          <Icon name='github-alt' size={100} color='silver' />
         </View>
         <Button
           title='Details'
