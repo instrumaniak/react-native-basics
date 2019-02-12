@@ -8,11 +8,10 @@ import { ScrollView, View, Text, StyleSheet } from 'react-native'
 
 class ScrolledDownView extends Component {
   render() {
-    const tiles = new Array(100).fill('')
+    const tiles = new Array(10).fill('')
 
     return (
-      <ScrollView style={styles.scrl_container}>
-        <View style={styles.scrl_block}></View>
+      <ScrollView contentContainerStyle={styles.scrl_container}>
         { tiles.map((item, index) => (
             <View style={styles.scrl_block} key={index}>
               <Text>Tile # {index + 1}</Text>
@@ -24,20 +23,17 @@ class ScrolledDownView extends Component {
 }
 
 const styles = StyleSheet.create({
-  t_container: {
-    marginTop: 30,
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#eee'
-  },
   scrl_container: {
-    marginTop: 20
+    marginTop: 2,
+    padding: 5
   },
   scrl_block: {
     height: 100,
-    backgroundColor: '#ddd',
     padding: 5,
-    margin: 2
+    margin: 2,
+    backgroundColor: 'steelblue',
+    opacity: 0.7,
+    borderRadius: 5
   }
 })
 

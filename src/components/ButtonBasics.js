@@ -12,13 +12,11 @@ class ButtonBasics extends Component {
   }
   render() {
     return (
-      <View>
       <View style={styles.buttons}>
         <Button title='Button#1' color='pink' onPress={this.handleButtonPress}/>
         <Button title='Button#2' color='skyblue' onPress={this.handleButtonPress}/>
         <Button title='Button#3' color='steelblue' onPress={this.handleButtonPress}/>
         <Button title='Button#4' onPress={this.handleButtonPress} />
-      </View>
       </View>
     )
   }
@@ -26,9 +24,9 @@ class ButtonBasics extends Component {
 
 const styles = StyleSheet.create({
   buttons: {
-    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    padding: 20
   }
 })
 

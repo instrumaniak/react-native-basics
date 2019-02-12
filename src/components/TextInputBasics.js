@@ -18,11 +18,12 @@ class TextInputBasics extends Component {
   render() {
     const { name } = this.state
     return (
-      <View style={{padding: 10, backgroundColor: '#eee'}}>
+      <View style={{flex:1, padding: 10, backgroundColor: '#eee'}}>
         <View>
-          <Text>Text Input Basics: </Text>
+          <Text style={{ fontWeight: 'bold'}}>Text Input Basics: </Text>
         </View>
-        <View>
+
+        <View style={{ padding: 10}}>
           
           <TextInput
             value={name}
@@ -32,12 +33,14 @@ class TextInputBasics extends Component {
           
           <Button color='#666' title='Clear' onPress={this.handleClear}/>
         </View>
-        <View style={{marginTop: 40}}>
-          <Text>Your name is: <Text style={{fontWeight: 'bold'}}>{name}</Text></Text>
-          <Text>
-            { name.split(' ').map(word => word && '🍕').join(' ')}
-          </Text>
-        </View>
+        { name.length > 0 &&
+          <View style={{marginTop: 40}}>
+            <Text>Your name is: <Text style={{fontWeight: 'bold'}}>{name}</Text></Text>
+            <Text>
+              { name.split(' ').map(word => word && '🍕').join(' ')}
+            </Text>
+          </View>
+        }
       </View>
     )
   }
