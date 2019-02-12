@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
 
 import TextInputBasics from '../components/TextInputBasics'
 import ButtonBasics from '../components/ButtonBasics'
@@ -28,16 +28,31 @@ class Home extends React.Component {
           </Text>
         </View>
         <View>
-          <Icon name='github-alt' size={100} color='silver' />
+          <Icon name='github-alt' size={100} color='darkgray' />
         </View>
-        <Button
-          title='Details'
+        
+        <TouchableOpacity
+          style={s.button}
           onPress={() => navigate('Details')}
-        />
+        >
+          <Text style={s.buttonText}>Details</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 
+const s = StyleSheet.create({
+  button: {
+    paddingHorizontal: 65,
+    paddingVertical: 10,
+    backgroundColor: 'cadetblue',
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 15
+  }
+})
 
 export default Home
