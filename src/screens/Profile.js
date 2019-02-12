@@ -12,3 +12,5 @@ const Profile = () => (
 Profile.navigationOptions = {
   tabBarIcon: <Icon name='md-person' size={25} />
 }
+
+export default Profile

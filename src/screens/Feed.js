@@ -12,3 +12,5 @@ const Feed = ({ navigation }) => (
 Feed.navigationOptions = {
   tabBarIcon: <Icon name='md-list' size={25} />
 }
+
+export default Feed

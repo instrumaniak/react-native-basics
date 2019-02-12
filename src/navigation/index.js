@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   createStackNavigator,
   createSwitchNavigator,
@@ -6,12 +7,15 @@ import {
   createAppContainer,
 } from "react-navigation"
 
+import Icon from 'react-native-vector-icons/Ionicons'
+
 import Home from '../screens/Home'
 import Details from '../screens/Details'
 import MyModal from '../screens/MyModal'
 import Feed from '../screens/Feed'
 import Profile from '../screens/Profile'
 import Settings from '../screens/Settings'
+import Extra from '../screens/Extra'
 
 const DetailsTabNavigator = createBottomTabNavigator(
   {

@@ -12,3 +12,5 @@ const Settings = () => (
 Settings.navigationOptions = {
   tabBarIcon: <Icon name='md-settings' size={25}/>
 }
+
+export default Settings

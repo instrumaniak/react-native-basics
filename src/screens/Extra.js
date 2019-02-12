@@ -12,3 +12,5 @@ const Extra = ({ navigation }) => (
 Extra.navigationOptions = {
   headerTitle: 'Extra'
 }
+
+export default Extra
