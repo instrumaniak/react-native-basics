@@ -15,6 +15,7 @@ import MyModal from '../screens/MyModal'
 import Feed from '../screens/Feed'
 import Profile from '../screens/Profile'
 import Settings from '../screens/Settings'
+import AnimationBasics from '../screens/AnimationBasics'
 import Extra from '../screens/Extra'
 
 const DetailsTabNavigator = createBottomTabNavigator(
@@ -57,6 +58,24 @@ const DetailsStackNavigator = createStackNavigator(
   }
 )
 
+const AnimationBasicsStackNavigator = createStackNavigator(
+  {
+    AnimationBasics
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerLeft: (
+        <Icon
+          onPress={() => navigation.openDrawer()}
+          name='md-menu'
+          size={30}
+          style={{ paddingLeft: 10 }}
+        />
+      )
+    })
+  }
+)
+
 const ExtraStackNavigator = createStackNavigator(
   {
     Extra
@@ -79,6 +98,9 @@ const ExtraStackNavigator = createStackNavigator(
 const AppDrawerNavigator = createDrawerNavigator({
   Details: {
     screen: DetailsStackNavigator
+  },
+  AnimationBasics: {
+    screen: AnimationBasicsStackNavigator
   },
   Extra: {
     screen: ExtraStackNavigator
